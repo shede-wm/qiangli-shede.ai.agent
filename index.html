@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广东强力集团有限公司 - 2026年奖补项目申报清单</title>
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2d5f8a;
+            --accent: #e8943a;
+            --accent-light: #f5b971;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c7a89;
+            --border: #dce3ec;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ===== Header (Sticky) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header h1 span {
+            color: var(--accent-light);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* ===== Navigation ===== */
+        .nav {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        .nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: rgba(255,255,255,0.05);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px 60px;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+        .info-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .info-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ===== Badge ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .badge-national {
+            background: linear-gradient(135deg, #e74c3c22, #e74c3c11);
+            color: #c0392b;
+            border: 1px solid #e74c3c44;
+        }
+        .badge-province {
+            background: linear-gradient(135deg, #3498db22, #3498db11);
+            color: #2471a3;
+            border: 1px solid #3498db44;
+        }
+        .badge-city {
+            background: linear-gradient(135deg, #27ae6022, #27ae6011);
+            color: #1e8449;
+            border: 1px solid #27ae6044;
+        }
+        .badge-other {
+            background: linear-gradient(135deg, #8e44ad22, #8e44ad11);
+            color: #6c3483;
+            border: 1px solid #8e44ad44;
+        }
+
+        /* ===== Business Cards Grid ===== */
+        .biz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .biz-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .biz-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .biz-card .biz-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+        .biz-card h4 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .biz-card p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== Table ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 1600px;
+        }
+        thead th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover {
+            background: #f0f5ff;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .level-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .level-national { background: #fde8e8; color: #c0392b; }
+        .level-province { background: #e8f0fe; color: #2471a3; }
+        .level-city { background: #e8f8e8; color: #1e8449; }
+        .level-district { background: #f3e8fd; color: #6c3483; }
+        .amount {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 15px;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        /* ===== Tech Tags ===== */
+        .tech-tag {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #e8f4fd;
+            color: #2471a3;
+            margin: 1px 2px;
+            white-space: nowrap;
+        }
+        .tech-tag.ai { background: #fde8f4; color: #c0392b; }
+        .tech-tag.hw { background: #e8fde8; color: #1e8449; }
+        .tech-tag.sw { background: #f3e8fd; color: #6c3483; }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .stat-card .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Filter Buttons ===== */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 18px 24px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 24px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .timeline-item h4 {
+            font-size: 15px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        .status-done {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #27ae6022;
+            color: #27ae60;
+            font-weight: 600;
+        }
+        .status-progress {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #f39c1222;
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        /* ===== Policy Links ===== */
+        .policy-ref a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            font-size: 13px;
+            transition: all 0.2s;
+            word-break: break-all;
+        }
+        .policy-ref a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .policy-card a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            transition: all 0.2s;
+        }
+        .policy-card a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .ext-icon {
+            display: inline-block;
+            font-size: 10px;
+            margin-left: 2px;
+            opacity: 0.6;
+        }
+
+        /* ===== Roadmap ===== */
+        .roadmap {
+            margin-top: 24px;
+        }
+        .roadmap-quarter {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .roadmap-label {
+            min-width: 72px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            padding-top: 6px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            padding: 8px 4px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .roadmap-items {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .roadmap-item {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid;
+            line-height: 1.5;
+            max-width: 280px;
+        }
+        .roadmap-item.national { background: #fde8e811; border-color: #e74c3c44; color: #c0392b; }
+        .roadmap-item.province { background: #e8f0fe11; border-color: #3498db44; color: #2471a3; }
+        .roadmap-item.city { background: #e8f8e811; border-color: #27ae6044; color: #1e8449; }
+        .roadmap-item.district { background: #f3e8fd11; border-color: #8e44ad44; color: #6c3483; }
+
+        /* ===== Unit Summary ===== */
+        .unit-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .unit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .unit-card .unit-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .unit-card .unit-count {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .unit-card .unit-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Lifecycle Bar ===== */
+        .lifecycle-bar {
+            margin-top: 20px;
+            padding: 20px 24px;
+            background: #f8f9fc;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .lifecycle-bar h4 {
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .lifecycle-steps {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+        .lifecycle-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 4px;
+        }
+        .lifecycle-step .bar {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .lifecycle-step:nth-child(1) .bar { background: #3498db; }
+        .lifecycle-step:nth-child(2) .bar { background: #9b59b6; }
+        .lifecycle-step:nth-child(3) .bar { background: #27ae60; }
+        .lifecycle-step:nth-child(4) .bar { background: #e74c3c; }
+        .lifecycle-step .step-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .lifecycle-step .step-pct {
+            font-size: 18px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== Contact Bar ===== */
+        .contact-bar {
+            margin-top: 20px;
+            padding: 16px 28px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .contact-bar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+            padding-right: 12px;
+            border-right: 2px solid var(--border);
+        }
+        .contact-bar-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .contact-bar-info {
+            font-size: 13px;
+            color: var(--text);
+        }
+        .contact-bar-info .cb-label {
+            color: var(--text-light);
+            margin-right: 4px;
+        }
+        .contact-bar-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .contact-bar-info a:hover {
+            color: var(--accent);
+        }
+        .contact-bar-sep {
+            width: 1px;
+            height: 28px;
+            background: var(--border);
+        }
+
+        /* ===== Collapse Sections ===== */
+        .collapse-group {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 2px dashed var(--border);
+        }
+        .collapse-group-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .collapse-section {
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .collapse-section summary {
+            padding: 18px 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+            border-left: 4px solid var(--accent);
+            transition: background 0.2s;
+        }
+        .collapse-section summary::-webkit-details-marker { display: none; }
+        .collapse-section summary:hover { background: #f8f9fc; }
+        .collapse-section summary::before {
+            content: '\25B6';
+            font-size: 12px;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .collapse-section[open] summary::before { transform: rotate(90deg); }
+        .collapse-section[open] summary {
+            border-bottom: 1px solid var(--border);
+            background: #f8f9fc;
+        }
+        .collapse-section .collapse-body {
+            padding: 24px 28px;
+            animation: fadeSlideIn 0.3s ease;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .header, .nav, .filter-bar { position: static; }
+            .section { page-break-inside: avoid; }
+            .collapse-section { break-inside: avoid; }
+            .collapse-section[open] summary { break-after: avoid; }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .container { padding: 16px; }
+            .header-inner { padding: 16px; flex-direction: column; gap: 8px; }
+            .nav-inner { padding: 0 16px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .info-grid { grid-template-columns: 1fr; }
+            .contact-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .contact-bar-sep { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header + Nav ===== -->
+<div class="header">
+    <div class="header-inner">
+        <h1>广东强力集团有限公司 <span>2026年度奖补项目申报清单</span></h1>
+        <div class="header-meta">编制日期：2026年7月3日 &nbsp;|&nbsp; 厨卫电器制造 · 广东省湛江市廉江市</div>
+    </div>
+    <div class="nav">
+        <div class="nav-inner">
+            <a href="#projects" class="active">可申报项目清单</a>
+            <a href="#policy">政策依据汇总</a>
+            <a href="#tips">重要提示</a>
+            <a href="#company">企业详情 &#9660;</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ═══ 首屏核心板块 ═══ -->
+
+    <!-- ===== 1. 可申报项目清单 ===== -->
+    <div class="section" id="projects">
+        <div class="section-title">
+            <div class="icon">1</div>
+            2026年可申报奖补项目清单
+        </div>
+
+        <!-- 统计摘要 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-num">8</div>
+                <div class="stat-label">可申报项目总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~12,500+</div>
+                <div class="stat-label">预计奖补总额（万元）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">1</div>
+                <div class="stat-label">国家级项目</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">7</div>
+                <div class="stat-label">省/市级项目</div>
+            </div>
+        </div>
+
+        <!-- 层级筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+            <button class="filter-btn" onclick="filterTable('national')">国家级</button>
+            <button class="filter-btn" onclick="filterTable('province')">省级</button>
+            <button class="filter-btn" onclick="filterTable('city')">市级</button>
+        </div>
+
+        <!-- 数据表格 -->
+        <div class="table-wrapper">
+            <table id="projectTable">
+                <thead>
+                    <tr>
+                        <th style="width:40px">序号</th>
+                        <th style="min-width:180px">可申报项目名称</th>
+                        <th style="min-width:100px">项目类别</th>
+                        <th style="min-width:110px">归口部门</th>
+                        <th style="min-width:80px">申报层级</th>
+                        <th style="min-width:80px">申报周期</th>
+                        <th style="min-width:100px">预计奖补金额（万元）</th>
+                        <th style="min-width:120px">关键技术方向</th>
+                        <th style="min-width:220px">申报核心条件</th>
+                        <th style="min-width:200px">所需材料</th>
+                        <th style="min-width:200px">政策依据（官方文件）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ═══ 国家级 ═══ -->
+                    <tr data-level="national">
+                        <td>1</td>
+                        <td><strong>超长期特别国债工业设备更新改造专项</strong></td>
+                        <td><span class="category-tag">技术改造</span></td>
+                        <td>国家发改委</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>分批申报<br>（第三批6-7月）</td>
+                        <td class="amount">最高10,000</td>
+                        <td>
+                            <span class="tech-tag hw">智能生产线</span>
+                            <span class="tech-tag hw">高效设备</span>
+                            <span class="tech-tag sw">设备管理系统</span>
+                        </td>
+                        <td>覆盖轻工等11大行业；固定资产投资≥200万元（不含土地、厂房）；淘汰落后设备，替换智能高效新设备；投资进度≤80%；无失信记录</td>
+                        <td>项目备案/核准文件；设备更新方案；固定资产投资证明；自有资金证明（≥30%）；环评/安评等手续文件</td>
+                        <td class="policy-ref"><a href="https://www.gov.cn/lianbo/202604/content_7067540.htm" target="_blank" rel="noopener">2026年第二批915亿元超长期特别国债支持设备更新资金<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- ═══ 省级 ═══ -->
+                    <tr data-level="province">
+                        <td>2</td>
+                        <td><strong>智能工厂梯度培育项目（基础级/先进级）</strong></td>
+                        <td><span class="category-tag">智能制造</span></td>
+                        <td>广东省工信厅 / 工信部</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>1-5月</td>
+                        <td class="amount">50-500</td>
+                        <td>
+                            <span class="tech-tag hw">设备联网</span>
+                            <span class="tech-tag sw">MES系统</span>
+                            <span class="tech-tag sw">SCADA</span>
+                            <span class="tech-tag ai">数据分析</span>
+                        </td>
+                        <td>规上工业企业，独立法人资格；基础级：设备联网率≥50%，自评测≥60分；先进级：成熟度≥三级，系统集成度≥70%</td>
+                        <td>智能工厂自评报告；智能制造能力成熟度评估报告；项目实施方案；设备联网率证明</td>
+                        <td class="policy-ref"><a href="https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2024/art_71b504e8f1d5444a988390593aeadf0b.html" target="_blank" rel="noopener">六部门关于开展2024年度智能工厂梯度培育行动的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>3</td>
+                        <td><strong>工业互联网标杆工厂及平台应用项目</strong></td>
+                        <td><span class="category-tag">智能制造</span></td>
+                        <td>广东省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>2-6月</td>
+                        <td class="amount">50-500</td>
+                        <td>
+                            <span class="tech-tag hw">工业网关</span>
+                            <span class="tech-tag sw">工业APP</span>
+                            <span class="tech-tag sw">云平台</span>
+                            <span class="tech-tag ai">数据采集</span>
+                        </td>
+                        <td>完成设备联网与数据采集上云；工业APP≥5个，覆盖50%以上生产环节；通过三级等保，生产效率提升≥15%</td>
+                        <td>工业互联网平台建设方案；设备联网上云证明；工业APP清单及覆盖范围；三级等保证明；效率提升评估报告</td>
+                        <td class="policy-ref"><a href="https://www.gov.cn/zhengce/zhengceku/202601/content_7054660.htm" target="_blank" rel="noopener">推动工业互联网平台高质量发展行动方案（2026-2028年）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>4</td>
+                        <td><strong>广东省工业领域"智改数转"技术改造项目</strong></td>
+                        <td><span class="category-tag">技术改造</span></td>
+                        <td>广东省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>1-5月</td>
+                        <td class="amount">800-2,000</td>
+                        <td>
+                            <span class="tech-tag hw">智能装备</span>
+                            <span class="tech-tag sw">MES/ERP</span>
+                            <span class="tech-tag sw">数字孪生</span>
+                            <span class="tech-tag ai">智能质检</span>
+                        </td>
+                        <td>独立法人工业企业，近3年无重大安全/环保/质量事故；设备投资≥800万元（切块项目）或≥2000万元（重点项目）；智能制造能力成熟度≥二级；项目年内基本竣工</td>
+                        <td>项目备案/核准文件；设备购置清单及发票；智能制造能力成熟度评估报告；项目实施方案；财务审计报告</td>
+                        <td class="policy-ref"><a href="https://www.gd.gov.cn/gkmlpt/content/3/3338/post_3338922.html" target="_blank" rel="noopener">广东省制造业数字化转型实施方案及若干政策措施<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>5</td>
+                        <td><strong>绿色制造与智能制造融合项目</strong></td>
+                        <td><span class="category-tag">绿色制造</span></td>
+                        <td>广东省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>3-6月</td>
+                        <td class="amount">最高1,000</td>
+                        <td>
+                            <span class="tech-tag hw">节能设备</span>
+                            <span class="tech-tag sw">EMS能源管理</span>
+                            <span class="tech-tag ai">能耗优化</span>
+                        </td>
+                        <td>已获评或拟申报绿色工厂；单位产品能耗降低≥20%；建成EMS能源管理系统；无环保处罚记录</td>
+                        <td>绿色工厂申报书；能源审计报告；EMS系统建设方案；单位产品能耗数据；节能设备投资清单</td>
+                        <td class="policy-ref"><a href="https://www.gov.cn/govweb/zhengce/zhengceku/202401/content_6929104.htm" target="_blank" rel="noopener">绿色工厂梯度培育及管理暂行办法<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>6</td>
+                        <td><strong>"AI+制造"智能应用示范项目</strong></td>
+                        <td><span class="category-tag">智能制造</span></td>
+                        <td>广东省工信厅 / 省数据局</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>4-8月</td>
+                        <td class="amount">最高1,000</td>
+                        <td>
+                            <span class="tech-tag ai">AI视觉质检</span>
+                            <span class="tech-tag ai">智能排产</span>
+                            <span class="tech-tag sw">工业大数据</span>
+                            <span class="tech-tag hw">边缘计算</span>
+                        </td>
+                        <td>规上工业企业，AI应用场景≥3个；项目总投资≥800万元；生产效率提升≥20%或不良率降低≥30%</td>
+                        <td>AI应用实施方案；AI场景说明及效果评估；项目投资明细；效率提升/不良率降低数据证明</td>
+                        <td class="policy-ref"><a href="http://www.gd.gov.cn/zwgk/wjk/qbwj/ybh/content/post_4787001.html" target="_blank" rel="noopener">广东省人工智能赋能制造业高质量发展行动方案（2025-2027年）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>7</td>
+                        <td><strong>智能制造能力成熟度评估与提升项目</strong></td>
+                        <td><span class="category-tag">智能制造</span></td>
+                        <td>广东省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>全年滚动<br>集中申报3-4月</td>
+                        <td class="amount">最高500</td>
+                        <td>
+                            <span class="tech-tag sw">CMMM评估</span>
+                            <span class="tech-tag sw">智能制造规划</span>
+                            <span class="tech-tag hw">产线升级</span>
+                        </td>
+                        <td>企业完成成熟度评估≥二级；制定提升计划，目标成熟度提升一级</td>
+                        <td>成熟度评估报告；提升计划方案；项目实施进展报告；投资明细</td>
+                        <td class="policy-ref">《智能制造能力成熟度模型》（GB/T 39116-2020）</td>
+                    </tr>
+                    <!-- ═══ 市级 ═══ -->
+                    <tr data-level="city">
+                        <td>8</td>
+                        <td><strong>中小企业数字化转型试点示范项目</strong></td>
+                        <td><span class="category-tag">数字化转型</span></td>
+                        <td>湛江市工信局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>5-6月</td>
+                        <td class="amount">最高600</td>
+                        <td>
+                            <span class="tech-tag sw">轻量化MES</span>
+                            <span class="tech-tag sw">ERP系统</span>
+                            <span class="tech-tag hw">传感器</span>
+                            <span class="tech-tag ai">数据分析</span>
+                        </td>
+                        <td>专精特新或规上中小工业企业；轻量化智能改造，总投资≤1000万元；设备投资占比≥50%；湛江市为省级中小企业数字化转型试点城市</td>
+                        <td>企业基本信息表；数字化改造项目入库申报表；改造方案及投资明细；财务审计报告</td>
+                        <td class="policy-ref"><a href="https://www.zhanjiang.gov.cn/zjsfw/bmdh/gyxxhj/zwgk/tzgg/content/mpost_2151715.html" target="_blank" rel="noopener">湛江市工信局关于开展省级中小企业数字化转型城市试点专项资金数字化改造项目申报评审通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 申报规划路线图 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#128197; 申报规划路线图（按时间窗口）</h3>
+            <div class="roadmap">
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q1<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">1-3月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9312;</strong> 智能工厂梯度培育（基础级/先进级）<br><span style="opacity:0.7">1-5月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9313;</strong> "智改数转"技术改造项目<br><span style="opacity:0.7">1-5月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9314;</strong> 智能制造能力成熟度评估<br><span style="opacity:0.7">3-4月集中 | 省工信厅</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q2<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">4-6月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9315;</strong> 工业互联网标杆工厂<br><span style="opacity:0.7">2-6月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9316;</strong> 绿色制造与智能制造融合<br><span style="opacity:0.7">3-6月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9317;</strong> "AI+制造"智能应用示范<br><span style="opacity:0.7">4-8月 | 省工信厅/省数据局</span></div>
+                        <div class="roadmap-item city"><strong>&#9318;</strong> 中小企业数字化转型试点<br><span style="opacity:0.7">5-6月 | 湛江市工信局</span></div>
+                        <div class="roadmap-item national"><strong>&#9319;</strong> 超长期特别国债设备更新（第三批）<br><span style="opacity:0.7">6-7月 | 国家发改委</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">全年<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">持续</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9320;</strong> 智能制造能力成熟度评估与提升<br><span style="opacity:0.7">全年滚动受理 | 省工信厅</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 归口部门项目分布 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#127970; 归口部门项目分布</h3>
+            <div class="unit-summary">
+                <div class="unit-card">
+                    <div class="unit-name">广东省工信厅</div>
+                    <div class="unit-count">6</div>
+                    <div class="unit-desc">智能工厂培育 / 工业互联网 / 智改数转 / 绿色制造 / AI+制造 / 成熟度提升</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">国家发改委</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">超长期特别国债设备更新</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">湛江市工信局</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">中小企业数字化转型试点</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">工信部</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">智能工厂梯度培育（国家级）</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 2. 政策依据汇总 ===== -->
+    <div class="section" id="policy">
+        <div class="section-title">
+            <div class="icon">2</div>
+            政策依据汇总
+        </div>
+
+        <!-- 国家级 -->
+        <div class="card policy-card">
+            <h3>国家级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2024/art_71b504e8f1d5444a988390593aeadf0b.html" target="_blank" rel="noopener">六部门关于开展2024年度智能工厂梯度培育行动的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://www.gov.cn/zhengce/zhengceku/202601/content_7054660.htm" target="_blank" rel="noopener">推动工业互联网平台高质量发展行动方案（2026-2028年）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="https://www.gov.cn/lianbo/202604/content_7067540.htm" target="_blank" rel="noopener">2026年超长期特别国债支持设备更新资金<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> 《智能制造能力成熟度模型》（GB/T 39116-2020）
+                </div>
+            </div>
+        </div>
+
+        <!-- 省级 -->
+        <div class="card policy-card">
+            <h3>广东省级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://www.gd.gov.cn/gkmlpt/content/3/3338/post_3338922.html" target="_blank" rel="noopener">广东省制造业数字化转型实施方案及若干政策措施<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="http://www.gd.gov.cn/zwgk/wjk/qbwj/ybh/content/post_4787001.html" target="_blank" rel="noopener">广东省人工智能赋能制造业高质量发展行动方案（2025-2027年）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="https://www.gov.cn/govweb/zhengce/zhengceku/202401/content_6929104.htm" target="_blank" rel="noopener">绿色工厂梯度培育及管理暂行办法<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> 广东省工业和信息化厅关于2026年广东省制造业当家重点任务保障专项企业技术改造资金
+                </div>
+            </div>
+        </div>
+
+        <!-- 市级 -->
+        <div class="card policy-card">
+            <h3>湛江市级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://www.zhanjiang.gov.cn/zjsfw/bmdh/gyxxhj/zwgk/tzgg/content/mpost_2151715.html" target="_blank" rel="noopener">湛江市工信局关于开展省级中小企业数字化转型城市试点专项资金数字化改造项目申报评审通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. 重要提示 + 固定板块 ===== -->
+    <div class="section" id="tips">
+        <div class="card" style="background: #fffbeb; border-color: #f5deb3;">
+            <h3 style="color: #b8860b;">&#9888;&#65039; 重要提示</h3>
+            <p style="font-size: 13px; color: #8b7355; margin-top: 8px;">
+                本清单所列信息基于公开资料整理，仅供参考。具体申报条件、奖补金额和时间节点以各级主管部门发布的最新官方文件为准。建议企业密切关注广东省工业和信息化厅、湛江市工业和信息化局、廉江市科技和工业信息化局等相关部门的年度申报通知，提前做好材料准备。预计奖补金额可能因政策调整而变化，部分项目奖补金额需根据实际投资额计算。
+            </p>
+            <!-- ▼▼▼ ⚠️ 固定板块：项目申报全生命周期 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+            <div class="lifecycle-bar">
+                <h4>&#128203; 项目申报全生命周期</h4>
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">项目申报</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">评审批复</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">资金下达</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step" style="flex: 2;">
+                        <div class="bar"></div>
+                        <div class="step-label">结项验收</div>
+                        <div class="step-pct">40%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+        </div>
+
+        <!-- ▼▼▼ ⚠️ 固定板块：项目咨询联系人 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+        <div class="contact-bar">
+            <div class="contact-bar-title">&#128222; 项目咨询联系人</div>
+            <div class="contact-bar-name">赵璐红</div>
+            <div class="contact-bar-info">
+                <span class="cb-label">舍得酒业</span> &middot; 公共事务部总经理
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">电话</span> <a href="tel:18884606786">18884606786</a>
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">地址</span> 四川省成都市武侯区复地复城国际T1
+            </div>
+        </div>
+        <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+    </div>
+
+    <!-- ═══ 折叠面板区域 ═══ -->
+
+    <div class="collapse-group" id="company">
+        <div class="collapse-group-title">&#9660; 企业详情（点击展开） &#9660;</div>
+
+        <!-- 企业概述（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127970; 企业概述</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>广东强力集团有限公司成立于1991年12月8日，前身为1986年创办的家电企业，总部位于广东省廉江市。经过三十余年发展，集团已成长为中国厨房电器制造龙头企业，主营吸油烟机、燃气灶、消毒柜、燃气热水器、电热水器、电饭煲等厨卫电器产品的研发、生产和销售。集团注册资本3000万元，法定代表人许平，在廉江和中山黄圃建有两大生产基地，下辖广东强力科技股份有限公司（2017年挂牌新三板）等多家子公司。集团拥有43项专利技术和26项注册商标，产品覆盖全国市场。</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">企业全称</div>
+                        <div class="value">广东强力集团有限公司</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">成立年份</div>
+                        <div class="value">1991年</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">法定代表人</div>
+                        <div class="value">许平</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册资本</div>
+                        <div class="value">3,000万元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册地址</div>
+                        <div class="value">广东省廉江市九洲江大道中601号</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">所属行业</div>
+                        <div class="value">制造业 · 厨卫电器</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">企业性质</div>
+                        <div class="value">民营企业</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">生产基地</div>
+                        <div class="value">廉江基地 / 中山黄圃基地</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 主营业务（折叠） -->
+        <details class="collapse-section">
+            <summary>&#9881; 主营业务</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>广东强力集团以厨房电器制造为核心主业，覆盖研发、生产、销售全产业链。集团首创"近聚式"吸油烟机及"低碳火"炉具，在节能、环保方面获得市场广泛认可。产品涵盖吸油烟机、燃气灶具、消毒柜、燃气热水器、电热水器、电饭煲、电磁炉等厨卫电器全品类，拥有"强力"品牌驰名商标。集团同时在中山设有智能电器研发制造子公司，拓展智能电器和五金制品领域。</p>
+                </div>
+                <div class="biz-grid">
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#9881;</div>
+                        <h4>厨卫电器制造</h4>
+                        <p>吸油烟机、燃气灶、消毒柜、燃气热水器、电热水器等全品类厨卫电器研发与生产</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8fde8;">&#128161;</div>
+                        <h4>智能电器研发</h4>
+                        <p>通过子公司强力科技开展智能电器、家用电器、五金制品的研发、生产和销售</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fde8f4;">&#127968;</div>
+                        <h4>品牌运营</h4>
+                        <p>"强力"品牌驰名商标运营，产品覆盖全国市场，首创近聚式烟机和低碳火炉具</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #f3e8fd;">&#128200;</div>
+                        <h4>多元化投资</h4>
+                        <p>截至2025年对外投资12家企业，控制8家企业，涉及家电制造、房地产等领域</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 资质与荣誉（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127942; 已获得的资质与荣誉</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>国家级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-national">&#127942; 国家免检产品</span>
+                        <span class="badge badge-national">&#127942; 中国驰名商标</span>
+                        <span class="badge badge-national">&#127942; 科技型中小企业（2022年）</span>
+                        <span class="badge badge-national">&#127942; A级纳税人（2024年）</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>省市级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-province">&#127941; 广东省守合同重信用企业（连续十七年）</span>
+                        <span class="badge badge-province">&#127941; 广东省科技厅认定科技型企业</span>
+                        <span class="badge badge-city">&#127941; 中山市光彩之星</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>知识产权</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-other">&#128218; 43项专利技术</span>
+                        <span class="badge badge-other">&#128218; 26项注册商标</span>
+                        <span class="badge badge-other">&#128218; 1项软件著作权</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 近三年项目申请（折叠） -->
+        <details class="collapse-section">
+            <summary>&#128203; 近三年项目申请情况（2024-2026）</summary>
+            <div class="collapse-body">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2026年</div>
+                        <h4>广东省制造业当家重点任务保障专项企业技术改造资金</h4>
+                        <p>湛江市获7128万元省级技改专项资金，覆盖220家制造企业，强力集团所在区域受益 <span class="status-progress">公示中</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025年</div>
+                        <h4>湛江市中小企业数字化转型城市试点项目</h4>
+                        <p>湛江市作为省级中小企业数字化转型试点城市，持续推动数字化改造项目入库（已推进至第八批） <span class="status-done">持续推进</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>A级纳税人认定</h4>
+                        <p>广东强力科技股份有限公司通过A级纳税人认定 <span class="status-done">已通过</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>经营范围变更与智能电器拓展</h4>
+                        <p>子公司强力科技经营范围变更，新增智能电器、家用电器、五金制品的研发、生产和销售 <span class="status-done">已完成</span></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+    广东强力集团有限公司 &middot; 2026年度奖补项目申报清单 &middot; 仅供内部参考使用 &middot; 编制日期：2026年7月3日
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // 1. 导航平滑滚动 + 激活态切换
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 2. 表格层级筛选
+    function filterTable(level) {
+        const rows = document.querySelectorAll('#projectTable tbody tr');
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        rows.forEach(row => {
+            if (level === 'all' || row.dataset.level === level) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // 3. 滚动监听 (Scroll Spy)
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section, .collapse-group');
+        const navLinks = document.querySelectorAll('.nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. 折叠面板：点击"企业详情"导航自动展开所有折叠面板
+    document.querySelector('.nav a[href="#company"]').addEventListener('click', function() {
+        setTimeout(() => {
+            document.querySelectorAll('.collapse-section').forEach(d => d.open = true);
+        }, 400);
+    });
+</script>
+
+</body>
+</html>
